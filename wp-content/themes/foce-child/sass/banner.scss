@@ -1,0 +1,154 @@
+
+
+  // Le banner//
+
+  .banner{
+    position: relative;
+    object-fit: contain;
+    height: 800px;
+    background-image: none !important;
+  }
+
+  .banner__logo {
+    position: sticky;
+    top: 70px;
+    z-index: 9;
+    opacity: 2;
+    animation: slide-up 2s 300ms both, float-element 6s 2s infinite ease-in-out;
+  }
+  .banner__background {
+    z-index: -3;
+    opacity: 0;
+    left: auto !important;
+    
+  }
+
+  .banner__video {
+    z-index: 1;
+    opacity: 1;
+    left: auto !important;
+  }
+
+  .banner__background,
+.banner__video {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  min-width: 1440px !important;
+  animation: slide-down 2s 300ms both ;
+  
+}
+ 
+  .slide-up {
+    animation: slide-up 2s 300ms both;
+  }
+  @keyframes slide-up {
+    0% {
+      transform: translateY(400px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      visibility: visible;
+    }
+  }
+  
+  //Effet opac du slide down//
+@keyframes slide-down {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+// Effet opac du slide up //
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// Flottements des éléments //
+
+@keyframes float-element {
+
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    transform: translate3d(0, -12px, 0);
+  }
+  40% {
+    transform: translate3d(0, 0, 0);
+  }
+  60% {
+    transform: translate3d(0, 10px, 0);
+  }
+  80% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+
+// media queries banner//
+
+// Tablettes //
+
+@media all and (max-width: 768px) {
+.banner  {
+  min-height: 600px !important;
+  height: 600px !important;
+}
+
+.banner .banner__video {
+  opacity: -3;
+  display: none;
+}
+
+.banner__background {
+  opacity: 3;
+  min-width: 1200px !important;
+}
+
+.banner img {
+  width: 80%;
+}
+}
+
+
+//Mobiles//
+
+@media all and (max-width: 470px) {
+.banner  {
+  min-height: 470px ;
+  height: 470px ;
+}
+
+.banner .banner__video {
+  opacity: 0;
+}
+
+.banner__background {
+  opacity: 3;
+  min-width: 470px!important ;
+  height: 425px!important;
+}
+}

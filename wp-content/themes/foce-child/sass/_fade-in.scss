@@ -1,0 +1,21 @@
+   // effet fade-in page accueil bas en haut //
+ 
+ 
+   .story.fade-in,
+.studio.fade-in,
+.site-footer.fade-in,
+.nominations_oscars.fade-in{
+  opacity: 0;
+  animation: fadeInFromBottom 2s ease-in-out forwards; 
+}
+
+@keyframes fadeInFromBottom {
+  from {
+      opacity: 0;
+      transform: translateY(50px); 
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0); 
+  }
+}

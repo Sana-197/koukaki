@@ -1,0 +1,415 @@
+
+
+//menu burger//
+
+.main-navigation.toggled ul {
+    display: flex !important;
+  }
+  
+  #site-navigation {
+    position: relative;
+  }
+  #titreMenu .title-site{
+    font-family: "Quicksand", sans-serif;
+    font-size: 21.5px;
+  }
+  
+  .btn__burger {
+    position: absolute;
+    top: 50%; 
+    right: 3em; 
+    transform: translateY(-50%); 
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  
+  .btn__burger .line {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin-bottom: 5px; 
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #burger-btn.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 5px);
+  }
+  
+  #burger-btn.active .line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #burger-btn.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -5px);
+  }
+  
+  
+  
+  
+  /* Styles pour le menu en plein écran */
+  
+  .fullscreenMenu {
+    position: fixed;
+      top: 80px;
+      left: 2.85rem;
+      right: 1rem;
+      width: 1440px;
+      height: 1024px;
+      background-color: #FFF5E9;
+      color: black;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease-in;
+  }
+  
+  
+  .fullscreenMenu.active {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeInMenu 2s ease-in-out;
+  }
+  
+  @keyframes fadeInMenu {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+    
+  }
+  .fullscreenMenu.inactive{
+    opacity: 1;
+    visibility:visible ;
+    animation: fadeOutMenu 2s ease-in-out;
+  }
+  @keyframes fadeOutMenu {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+    
+  }
+  
+  
+  .fullscreenMenu ul{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 190px;
+  }
+  
+  .fullscreenMenu li{
+         font-weight: 500;
+          font-size: 43px;
+          line-height: 85px;
+          list-style-type: none;
+          margin: 0;
+          justify-content: center;
+          text-align: center;
+  }
+  .fullscreenMenu a{
+      text-decoration: none;
+  }
+  
+  .fullscreenMenu a:hover {
+    color: black; 
+    text-shadow: -1px -1px 6px rgba(255, 127, 0, 0.5), 1px 1px 6px rgba(255, 127, 0, 0.5); /* Effet d'ombre avec flou légèrement plus étendu */
+  }
+  
+  
+  .fullscreenMenu p{
+      text-align: center;
+      margin-top: 75px;
+      font-size: 17px;
+  
+  }
+  
+  
+  .logoFullscreen {
+    position: absolute;
+    width: 154px;
+    height: 105.83px;
+    left: 636px;
+    top: 70px;
+    filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
+  }
+  
+  .orchidMenu {
+    position: absolute;
+    left: -50px;
+    width: 150px;
+    height: 148px;
+    top: 70px;
+    animation: FlowerRotation 5s infinite linear;
+  }
+  
+  .flowerMenu {
+    position: absolute;
+    top: 385px;
+    left: 350px;
+    width: 55px;
+    height: 55px;
+    animation: FlowerRotation 5s infinite linear;
+  }
+  
+  .sunflowerMenu {
+    position: absolute;
+    top: 100px;
+    left: 940px;
+    width: 170px;
+    height: 170px;
+    animation: FlowerRotation 5s infinite linear;
+  }
+  
+  .randomflowerMenu {
+    position: absolute;
+    top: 330px;
+    left: 1390px;
+    width: 65px;
+    height: 65px;
+    animation: FlowerRotation 5s infinite linear;
+  }
+  
+  .hibiscusMenu {
+    position: absolute;
+    top: 440px;
+    left: 1122px;
+    width: 626px;
+    height: 626px;
+    animation: FlowerRotation 5s infinite linear;
+  }
+  
+  @keyframes FlowerRotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .small-kawanekoMenu {
+    position: absolute;
+    top: 180px;
+    left: 435px;
+    width: 130px;
+    height: 130px;
+    animation: slide-up 2s 300ms both, float-element 6s 2s infinite ease-in-out;
+  }
+  
+  .small-onejiiroMenu {
+    position: absolute;
+    top: 520px;
+    left: 230px;
+    width: 130px;
+    height: 130px;
+    animation: slide-up 2s 300ms both, float-element 6s 2s infinite ease-in-out;
+  }
+  
+  .small-jaakunaMenu {
+    position: absolute;
+    top: 340px;
+    left: 921px;
+    width: 135px;
+    height: 135px;
+    animation: slide-up 2s 300ms both, float-element 6s 2s infinite ease-in-out;
+  }
+  @keyframes floatInCircle {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(50px, 0, 0) rotate(360deg);
+    }
+  }
+  
+  
+  // Media queries //
+  
+  @media screen and (max-width: 1440px) {
+    .fullscreenMenu {
+      width: 1440px;
+      left: 0.05rem; 
+      right: 1rem; 
+    }
+  }
+  @media screen and (max-width: 1025px) {
+    .fullscreenMenu {
+      width: 1020px;
+      left: 0.05rem; 
+      right: 1rem; 
+    }
+    .small-kawanekoMenu {
+      position: absolute;
+      top: 180px;
+      left: 250px;
+      width: 130px;
+      height: 130px;
+  }
+  .logoFullscreen {
+    position: absolute;
+    width: 154px;
+    height: 105.83px;
+    left: 435px;
+    top: 60px;
+  }
+  
+  .small-jaakunaMenu {
+    position: absolute;
+    top: 340px;
+    left: 740px;
+    width: 135px;
+    height: 135px;
+  }
+  .small-onejiiroMenu {
+    position: absolute;
+    top: 440px;
+    left: 100px;
+    width: 130px;
+    height: 130px;
+  }
+  .flowerMenu {
+    position: absolute;
+    top: 385px;
+    left: 230px;
+    width: 55px;
+    height: 55px;
+  }
+  .sunflowerMenu {
+    position: absolute;
+    top: 100px;
+    left: 740px;
+    width: 170px;
+    height: 170px;
+  }
+  }
+  
+  @media screen and (max-width: 768px){
+    .fullscreenMenu {
+      width: 768px;
+      left: 0.05rem; 
+      right: 1rem; 
+    }
+  
+    .logoFullscreen {
+      position: absolute;
+      width: 154px;
+      height: 105.83px;
+      left: 300px;
+      top: 60px;
+    }
+    .small-kawanekoMenu {
+      position: absolute;
+      top: 180px;
+      left: 150px;
+      width: 130px;
+      height: 130px;
+  }
+  
+  .small-jaakunaMenu {
+    position: absolute;
+    top: 340px;
+    left: 540px;
+    width: 135px;
+    height: 135px;
+  }
+  .small-onejiiroMenu {
+    position: absolute;
+    top: 440px;
+    left: 50px;
+    width: 130px;
+    height: 130px;
+  }
+  .flowerMenu {
+    position: absolute;
+    top: 385px;
+    left: 150px;
+    width: 55px;
+    height: 55px;
+  }
+  .sunflowerMenu {
+    position: absolute;
+    top: 100px;
+    left: 540px;
+    width: 170px;
+    height: 170px;
+  }
+    
+  }
+  @media screen and (max-width: 430px) {
+    
+     .title-site {
+     display: none;
+     
+    }
+    #titreMenu{
+      position: fixed;
+      background-color: #FFF5E9;
+    }
+    
+    .btn__burger {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      right: auto; 
+      margin-top: 2rem !important;
+    }
+    .fullscreenMenu {
+      width: 425px;
+      left: 0.05rem; 
+      right: 1rem; 
+    }
+    .logoFullscreen {
+      position: absolute;
+      width: 154px;
+      height: 105.83px;
+      left: 120px;
+      top: 60px;
+    }
+    .small-jaakunaMenu  {
+      display: none !important;
+      animation:none;
+    }
+    .small-kawanekoMenu{
+      display: none;
+    }
+    .small-onejiiroMenu {
+      display: none;
+    }
+    .flowerMenu {
+      display: none;
+    }
+    .hibiscusMenu {
+      display: none;
+    }
+    .orchidMenu {
+      display: none;
+    }
+    .randomflowerMenu {
+      display: none;
+    }
+    .sunflowerMenu{
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 375px) {
+    .fullscreenMenu {
+      width: 375px;
+      left: 0.05rem; 
+      right: 1rem; 
+    }
+  }
+  
+  @media screen and (max-width: 320px) {
+    .fullscreenMenu {
+      width: 320px;
+      left: 0.05rem; 
+      right: 1rem; 
+    }
+  }
+  

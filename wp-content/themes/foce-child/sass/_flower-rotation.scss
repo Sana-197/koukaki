@@ -1,0 +1,67 @@
+
+
+
+  //Rotation des fleurs//
+  .story__article::after {
+    animation: FlowerRotation 5s infinite linear;
+    transform-origin: 94px 94px;
+    
+  }
+  
+  .story h2::after{
+    animation: FlowerRotation 5s infinite linear;
+   transform-origin: 77px 77px;
+   
+  }
+
+  
+   #studio h2::before {
+    animation: FlowerRotation 5s infinite linear;
+    transform-origin: 101px 101px;
+    
+  }
+  
+   #studio h2::after {
+    animation: FlowerRotation 5s infinite linear;
+    transform-origin: 54px 54px;
+  }
+  .nominations_oscars{
+
+    &::before {
+      animation: FlowerRotation 5s infinite linear;
+      transform-origin: 77px 77px;
+    }
+  
+    &::after {
+      animation: FlowerRotation 5s infinite linear;
+      transform-origin: 86px 86px;
+    }
+  }
+
+  .site-footer {
+    
+  
+    &::before {
+      animation: FlowerRotation 5s infinite linear;
+      transform-origin: 77px 77px;
+    }
+  
+    &::after {
+      animation: FlowerRotation 5s infinite linear;
+      transform-origin: 86px 86px;
+    }
+  
+    & ul::after {
+      animation: FlowerRotation 10s infinite linear;
+      transform-origin: 323px 323px;
+    }
+  }
+
+  @keyframes FlowerRotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

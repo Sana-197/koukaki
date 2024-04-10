@@ -1,0 +1,888 @@
+@charset "UTF-8";
+.story.fade-in,
+.studio.fade-in,
+.site-footer.fade-in,
+.nominations_oscars.fade-in {
+  opacity: 0;
+  animation: fadeInFromBottom 2s ease-in-out forwards;
+}
+
+@keyframes fadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.banner {
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 800px;
+  background-image: none !important;
+}
+
+.banner__logo {
+  position: sticky;
+  top: 70px;
+  z-index: 9;
+  opacity: 2;
+  animation: slide-up 2s 300ms both, float-element 6s 2s infinite ease-in-out;
+}
+
+.banner__background {
+  z-index: -3;
+  opacity: 0;
+  left: auto !important;
+}
+
+.banner__video {
+  z-index: 1;
+  opacity: 1;
+  left: auto !important;
+}
+
+.banner__background,
+.banner__video {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  min-width: 1440px !important;
+  animation: slide-down 2s 300ms both;
+}
+
+.slide-up {
+  animation: slide-up 2s 300ms both;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes float-element {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    transform: translate3d(0, -12px, 0);
+  }
+  40% {
+    transform: translate3d(0, 0, 0);
+  }
+  60% {
+    transform: translate3d(0, 10px, 0);
+  }
+  80% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media all and (max-width: 768px) {
+  .banner {
+    min-height: 600px !important;
+    height: 600px !important;
+  }
+  .banner .banner__video {
+    opacity: -3;
+    display: none;
+  }
+  .banner__background {
+    opacity: 3;
+    min-width: 1200px !important;
+  }
+  .banner img {
+    width: 80%;
+  }
+}
+@media all and (max-width: 470px) {
+  .banner {
+    min-height: 470px;
+    height: 470px;
+  }
+  .banner .banner__video {
+    opacity: 0;
+  }
+  .banner__background {
+    opacity: 3;
+    min-width: 470px !important;
+    height: 425px !important;
+  }
+}
+.nominations_oscars {
+  margin-top: 7rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+.nominations__title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.nominations__img {
+  width: 278px;
+  height: 129px;
+  margin-top: 50px;
+}
+
+.nominations__title h3 {
+  position: absolute;
+  line-height: 3rem;
+  text-align: left;
+  width: 720px;
+  height: 267px;
+  font-size: 30px;
+  margin-top: 2rem;
+}
+
+.nominations__title img {
+  height: 100%;
+}
+
+.nominations_oscars::before {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  z-index: 1;
+  left: 11em;
+  top: -5em;
+}
+
+.nominations_oscars::after {
+  content: url("./assets/images/orchid.png");
+  position: absolute;
+  right: -7em;
+  bottom: 12em;
+}
+
+.site-footer::before {
+  content: "";
+}
+
+.site-footer::after {
+  content: "";
+}
+
+@media screen and (max-width: 1024px) {
+  .nominations_oscars {
+    flex-direction: row;
+    align-items: center;
+  }
+  .nominations__title {
+    width: 100%;
+    text-align: center;
+    margin: 6rem;
+    padding-top: 3rem;
+  }
+  .nominations__title h3 {
+    width: 100%;
+    font-size: 26px;
+    line-height: 2.5rem;
+    position: absolute;
+    text-align: center;
+    padding-top: 3rem;
+  }
+  .nominations__img {
+    width: 60%;
+    margin-top: 20px;
+  }
+  .nominations_oscars::before {
+    content: url("./assets/images/Sunflower.png");
+    position: absolute;
+    z-index: 1;
+    left: 2em;
+    top: -1em;
+  }
+  .nominations_oscars::after {
+    content: url("./assets/images/orchid.png");
+    position: absolute;
+    right: -8em;
+    bottom: 25em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nominations_oscars::before,
+  .nominations_oscars::after {
+    display: none;
+  }
+  .nominations_oscars {
+    flex-direction: column;
+    align-items: center;
+  }
+  .nominations__title {
+    width: 100%;
+    text-align: center;
+    padding-top: 3rem;
+  }
+  .nominations__title h3 {
+    width: 90%;
+    font-size: 26px;
+    line-height: 2.5rem;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    margin: 3rem;
+  }
+  .nominations__img {
+    height: 50%;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 470px) {
+  .nominations__title {
+    width: 100%;
+    text-align: center;
+    padding-top: 3rem;
+    justify-content: center;
+    margin-left: -1rem;
+  }
+  .nominations__title h3 {
+    width: 425px;
+    height: 158px;
+    font-size: 13px;
+    line-height: 1.5rem;
+    position: absolute;
+    text-align: left;
+    justify-content: center;
+    margin: 3rem;
+  }
+  .nominations__title img {
+    width: 100%;
+    margin: 3rem;
+  }
+}
+.main-navigation.toggled ul {
+  display: flex !important;
+}
+
+#site-navigation {
+  position: relative;
+}
+
+#titreMenu .title-site {
+  font-family: "Quicksand", sans-serif;
+  font-size: 21.5px;
+}
+
+.btn__burger {
+  position: absolute;
+  top: 50%;
+  right: 3em;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.btn__burger .line {
+  width: 30px;
+  height: 3px;
+  background-color: #000;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+#burger-btn.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 5px);
+}
+
+#burger-btn.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+#burger-btn.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -5px);
+}
+
+/* Styles pour le menu en plein écran */
+.fullscreenMenu {
+  position: fixed;
+  top: 80px;
+  left: 2.85rem;
+  right: 1rem;
+  width: 1440px;
+  height: 1024px;
+  background-color: #FFF5E9;
+  color: black;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in;
+}
+
+.fullscreenMenu.active {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeInMenu 2s ease-in-out;
+}
+
+@keyframes fadeInMenu {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fullscreenMenu.inactive {
+  opacity: 1;
+  visibility: visible;
+  animation: fadeOutMenu 2s ease-in-out;
+}
+
+@keyframes fadeOutMenu {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.fullscreenMenu ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-top: 190px;
+}
+
+.fullscreenMenu li {
+  font-weight: 500;
+  font-size: 43px;
+  line-height: 85px;
+  list-style-type: none;
+  margin: 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.fullscreenMenu a {
+  text-decoration: none;
+}
+
+.fullscreenMenu a:hover {
+  color: black;
+  text-shadow: -1px -1px 6px rgba(255, 127, 0, 0.5), 1px 1px 6px rgba(255, 127, 0, 0.5); /* Effet d'ombre avec flou légèrement plus étendu */
+}
+
+.fullscreenMenu p {
+  text-align: center;
+  margin-top: 75px;
+  font-size: 17px;
+}
+
+.logoFullscreen {
+  position: absolute;
+  width: 154px;
+  height: 105.83px;
+  left: 636px;
+  top: 70px;
+  filter: drop-shadow(0px 0px 10px rgba(255, 92, 0, 0.6));
+}
+
+.orchidMenu {
+  position: absolute;
+  left: -50px;
+  width: 150px;
+  height: 148px;
+  top: 70px;
+  animation: FlowerRotation 5s infinite linear;
+}
+
+.flowerMenu {
+  position: absolute;
+  top: 385px;
+  left: 350px;
+  width: 55px;
+  height: 55px;
+  animation: FlowerRotation 5s infinite linear;
+}
+
+.sunflowerMenu {
+  position: absolute;
+  top: 100px;
+  left: 940px;
+  width: 170px;
+  height: 170px;
+  animation: FlowerRotation 5s infinite linear;
+}
+
+.randomflowerMenu {
+  position: absolute;
+  top: 330px;
+  left: 1390px;
+  width: 65px;
+  height: 65px;
+  animation: FlowerRotation 5s infinite linear;
+}
+
+.hibiscusMenu {
+  position: absolute;
+  top: 440px;
+  left: 1122px;
+  width: 626px;
+  height: 626px;
+  animation: FlowerRotation 5s infinite linear;
+}
+
+@keyframes FlowerRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.small-kawanekoMenu {
+  position: absolute;
+  top: 180px;
+  left: 435px;
+  width: 130px;
+  height: 130px;
+  animation: slide-up 2s 300ms both, float-element 6s 2s infinite ease-in-out;
+}
+
+.small-onejiiroMenu {
+  position: absolute;
+  top: 520px;
+  left: 230px;
+  width: 130px;
+  height: 130px;
+  animation: slide-up 2s 300ms both, float-element 6s 2s infinite ease-in-out;
+}
+
+.small-jaakunaMenu {
+  position: absolute;
+  top: 340px;
+  left: 921px;
+  width: 135px;
+  height: 135px;
+  animation: slide-up 2s 300ms both, float-element 6s 2s infinite ease-in-out;
+}
+
+@keyframes floatInCircle {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(50px, 0, 0) rotate(360deg);
+  }
+}
+@media screen and (max-width: 1440px) {
+  .fullscreenMenu {
+    width: 1440px;
+    left: 0.05rem;
+    right: 1rem;
+  }
+}
+@media screen and (max-width: 1025px) {
+  .fullscreenMenu {
+    width: 1020px;
+    left: 0.05rem;
+    right: 1rem;
+  }
+  .small-kawanekoMenu {
+    position: absolute;
+    top: 180px;
+    left: 250px;
+    width: 130px;
+    height: 130px;
+  }
+  .logoFullscreen {
+    position: absolute;
+    width: 154px;
+    height: 105.83px;
+    left: 435px;
+    top: 60px;
+  }
+  .small-jaakunaMenu {
+    position: absolute;
+    top: 340px;
+    left: 740px;
+    width: 135px;
+    height: 135px;
+  }
+  .small-onejiiroMenu {
+    position: absolute;
+    top: 440px;
+    left: 100px;
+    width: 130px;
+    height: 130px;
+  }
+  .flowerMenu {
+    position: absolute;
+    top: 385px;
+    left: 230px;
+    width: 55px;
+    height: 55px;
+  }
+  .sunflowerMenu {
+    position: absolute;
+    top: 100px;
+    left: 740px;
+    width: 170px;
+    height: 170px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .fullscreenMenu {
+    width: 768px;
+    left: 0.05rem;
+    right: 1rem;
+  }
+  .logoFullscreen {
+    position: absolute;
+    width: 154px;
+    height: 105.83px;
+    left: 300px;
+    top: 60px;
+  }
+  .small-kawanekoMenu {
+    position: absolute;
+    top: 180px;
+    left: 150px;
+    width: 130px;
+    height: 130px;
+  }
+  .small-jaakunaMenu {
+    position: absolute;
+    top: 340px;
+    left: 540px;
+    width: 135px;
+    height: 135px;
+  }
+  .small-onejiiroMenu {
+    position: absolute;
+    top: 440px;
+    left: 50px;
+    width: 130px;
+    height: 130px;
+  }
+  .flowerMenu {
+    position: absolute;
+    top: 385px;
+    left: 150px;
+    width: 55px;
+    height: 55px;
+  }
+  .sunflowerMenu {
+    position: absolute;
+    top: 100px;
+    left: 540px;
+    width: 170px;
+    height: 170px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .title-site {
+    display: none;
+  }
+  #titreMenu {
+    position: fixed;
+    background-color: #FFF5E9;
+  }
+  .btn__burger {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: auto;
+    margin-top: 2rem !important;
+  }
+  .fullscreenMenu {
+    width: 425px;
+    left: 0.05rem;
+    right: 1rem;
+  }
+  .logoFullscreen {
+    position: absolute;
+    width: 154px;
+    height: 105.83px;
+    left: 120px;
+    top: 60px;
+  }
+  .small-jaakunaMenu {
+    display: none !important;
+    animation: none;
+  }
+  .small-kawanekoMenu {
+    display: none;
+  }
+  .small-onejiiroMenu {
+    display: none;
+  }
+  .flowerMenu {
+    display: none;
+  }
+  .hibiscusMenu {
+    display: none;
+  }
+  .orchidMenu {
+    display: none;
+  }
+  .randomflowerMenu {
+    display: none;
+  }
+  .sunflowerMenu {
+    display: none;
+  }
+}
+@media screen and (max-width: 375px) {
+  .fullscreenMenu {
+    width: 375px;
+    left: 0.05rem;
+    right: 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .fullscreenMenu {
+    width: 320px;
+    left: 0.05rem;
+    right: 1rem;
+  }
+}
+.story__article::after {
+  animation: FlowerRotation 5s infinite linear;
+  transform-origin: 94px 94px;
+}
+
+.story h2::after {
+  animation: FlowerRotation 5s infinite linear;
+  transform-origin: 77px 77px;
+}
+
+#studio h2::before {
+  animation: FlowerRotation 5s infinite linear;
+  transform-origin: 101px 101px;
+}
+
+#studio h2::after {
+  animation: FlowerRotation 5s infinite linear;
+  transform-origin: 54px 54px;
+}
+
+.nominations_oscars::before {
+  animation: FlowerRotation 5s infinite linear;
+  transform-origin: 77px 77px;
+}
+.nominations_oscars::after {
+  animation: FlowerRotation 5s infinite linear;
+  transform-origin: 86px 86px;
+}
+
+.site-footer::before {
+  animation: FlowerRotation 5s infinite linear;
+  transform-origin: 77px 77px;
+}
+.site-footer::after {
+  animation: FlowerRotation 5s infinite linear;
+  transform-origin: 86px 86px;
+}
+.site-footer ul::after {
+  animation: FlowerRotation 10s infinite linear;
+  transform-origin: 323px 323px;
+}
+
+@keyframes FlowerRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+div .main-characters {
+  width: 1400px;
+}
+
+article #characters {
+  width: 1400px;
+}
+
+.story #characters h3 {
+  text-align: left;
+  background-position: left;
+  width: 100%;
+  margin-right: 3rem;
+}
+
+#characters .characters__title {
+  text-align: left;
+  font-size: 2.5rem;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin: auto;
+  margin-left: -30em;
+}
+.swiper-slide {
+  background-position: center;
+  width: 440px;
+  height: 440px;
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-characters,
+  article #characters {
+    width: 100%;
+    max-width: 1024px;
+    margin: auto;
+  }
+  .story #characters h3 {
+    text-align: left;
+    background-position: left;
+    width: 100%;
+    margin-right: 3rem;
+  }
+  #characters .characters__title {
+    text-align: left;
+    font-size: 2rem;
+  }
+  .swiper {
+    width: 100%;
+    margin: auto;
+  }
+  .swiper-slide {
+    width: 440px;
+    height: 440px;
+    margin: 0 auto 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  div .main-characters {
+    width: 1400px;
+  }
+  article #characters {
+    width: 1400px;
+  }
+  .story #characters h3 {
+    text-align: center !important;
+    background-position: center !important;
+  }
+  #characters .characters__title {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  .swiper {
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: auto !important;
+    margin-left: 10em;
+  }
+  .swiper-slide {
+    width: 440px;
+    height: 440px;
+    margin: 0 auto -10rem;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+}
+.story #place {
+  display: flex;
+  background-image: url("./assets/images/Studio_Koukaki-image_place.png");
+  background-size: cover;
+}
+
+#place .clouds {
+  position: relative;
+}
+
+#place .big_cloud {
+  filter: blur(12px);
+  position: relative;
+  bottom: 11em;
+  left: 22em;
+}
+
+#place .little_cloud {
+  filter: blur(12px);
+  position: relative;
+  bottom: 9em;
+}
+
+@media screen and (max-width: 768px) {
+  .story .place {
+    justify-content: center;
+    text-align: center;
+  }
+  #place p {
+    padding-top: 0;
+  }
+  #place h3 {
+    margin-top: 9rem;
+    margin-bottom: 2rem;
+    z-index: 4;
+  }
+}
+@media screen and (max-width: 470px) {
+  #place h3 .place__title {
+    font-size: 1.5rem !important;
+    margin-left: 1rem;
+    z-index: 4;
+  }
+  #place .clouds {
+    z-index: 0;
+  }
+  #place p {
+    z-index: 2;
+    justify-content: center;
+    font-size: 16px;
+    margin-left: 1rem;
+  }
+  #studio h2 .studio__title {
+    font-size: 1.3rem;
+  }
+  #characters h3 .characters__title {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */
